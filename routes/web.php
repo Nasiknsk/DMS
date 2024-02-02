@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,9 @@ Route::get('userview', function () {
 Route::get('userupdate', function () {
     return view('updateuser');
 })->name('userupdate');
-// Route::get('task', function () {
-//     return view('task');
-// })->name('task');
+// Route::get('contacts', function () {
+//     return view('contacts');
+// })->name('contacts');
 
 
 
@@ -44,14 +45,17 @@ Route::post('/users',[App\Http\Controllers\UserController::class,'insert'])->nam
 Route::post('/addstaff',[App\Http\Controllers\UserController::class,'insert'])->name('addstaff');
 Route::post('/updatetaff',[App\Http\Controllers\UserController::class,'updateStaff'])->name('updatestaff');
 Route::get('/viewwuser',[App\Http\Controllers\UserController::class,'ShowUser'])->name('viewuser');
+Route::get('/viewfull/{id}',[App\Http\Controllers\UserController::class,'ViewFull'])->name('viewfull');
 Route::get('/updateuser/{id}', [App\Http\Controllers\UserController::class,'updateUser'])->name('updateuser');
 Route::get('/deleteuser/{id}', [App\Http\Controllers\UserController::class,'deleteUser'])->name('deleteuser');
 Route::post('/newcat', [App\Http\Controllers\CategoryController::class, 'addCat'])->name('newcat');
 Route::get('/addcat', [App\Http\Controllers\CategoryController::class, 'displayCat'])->name('addcat');
+Route::post('/addcontact', [App\Http\Controllers\ContactController::class, 'addContact'])->name('addcontact');
 Route::get('/editcat/{id}', [App\Http\Controllers\CategoryController::class,'editCat'])->name('editcat');
 Route::get('/delete/{id}', [App\Http\Controllers\CategoryController::class,'deleteCat'])->name('deletecat');
 Route::post('/updatecat', [App\Http\Controllers\CategoryController::class, 'updateCat'])->name('updatecat');
 Route::get('/task', [App\Http\Controllers\CategoryController::class, 'showCat'])->name('task');
+Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'ViewContact'])->name('contacts');
 
 
 // routes/web.php

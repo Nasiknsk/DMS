@@ -28,7 +28,7 @@
 @section('main')
     <main role="main">
         <!-- Your page content goes here -->
-        <div class="row" style="margin-left:200px; margin-top:100px;">
+        <div class="row" style="margin-left:20px; margin-top:20px;">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <strong>
@@ -47,7 +47,7 @@
                                     <label for="name">Category Name:</label>
                                     <input type="text" name="name" class="form-control" required>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Add</button>
+                                <button type="submit" class="btn btn-primary">Add</button><br><br>
                             </div>
                         </form>
                     </div>

@@ -57,7 +57,7 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
-                        <div class="sb-sidenav-menu-heading">Users</div>
+                        {{-- <div class="sb-sidenav-menu-heading">Users</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
@@ -70,7 +70,19 @@
                                 <a class="nav-link" href="{{ route('addnew') }}">Add Users</a>
                                 <a class="nav-link" href="{{ route('viewuser') }}">View Users</a>
                             </nav>
-                        </div>
+                        </div> --}}
+                        <div class="sb-sidenav-menu-heading">Users</div>
+                        <a class="nav-link" href="{{ route('viewuser') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i>
+                            </div>
+                            Users
+                        </a>
+                        <a class="nav-link" href="{{ route('contacts') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-address-book"></i>
+                            </div>
+                            Contacts
+                        </a>
+
 
                         {{-- <div class="sb-sidenav-menu-heading">Categories</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -87,7 +99,9 @@
                             </nav>
                         </div> --}}
 
+
                         <div class="sb-sidenav-menu-heading">Quick Access</div>
+
                         <a class="nav-link" href="{{ route('addcat') }}">
                             <div class="sb-nav-link-icon"><i class="fa fa-th-list"></i></div>
                             Categories

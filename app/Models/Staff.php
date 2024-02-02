@@ -17,6 +17,14 @@ class Staff extends Model
         'nic',
         'phone',
         'status',
+        'lname',
+        'phone2',
+        'address1',
+        'address2',
+        'r_name',
+        'r_ship',
+        'r_phone1',
+        'r_phone2',
     ];
     protected $casts = [
         'code' => 'string', // Assuming 'nic' is a string field

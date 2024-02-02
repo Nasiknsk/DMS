@@ -53,7 +53,7 @@
                             <i class="fas fa-folder"></i> Documents
                         </a>
                     </li>
-                    <li><a href="{{ route('logout') }}" class="btn btn-danger mt-3">Logout</a></li>
+                    {{-- <li><a href="{{ route('logout') }}" class="btn btn-danger mt-3">Logout</a></li> --}}
                 </ul>
 
 
