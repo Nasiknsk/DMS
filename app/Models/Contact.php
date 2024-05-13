@@ -14,7 +14,7 @@ class Contact extends Model
         'section',
         'address',
         'office_mail',
-        'office_phoe',
+        'office_phone',
         'incharge',
         'phone1',
         'phone2',

@@ -21,23 +21,26 @@ class LoginController extends Controller
                     $request->session()->put('user', [
                         'id' => $user->id,
                         'name' => $user->name,
+                        'type'=>$user->type,
                         // Add other details as needed
                     ]);
-                    return view('user')->with(['userName'=> $user->name ,'id'=>$user->id]);
+                    return view('userdash')->with(['userName'=> $user->name ,'id'=>$user->id,'type'=>$user->type]);
                 case 1:
                     $request->session()->put('user', [
                         'id' => $user->id,
                         'name' => $user->name,
+                        'type'=>$user->type,
                         // Add other details as needed
                     ]);
-                    return view('supervisor')->with(['userName'=> $user->name ,'id'=>$user->id]);
+                    return view('superdash')->with(['userName'=> $user->name ,'id'=>$user->id,'type'=>$user->type]);
                 case 2:
                     $request->session()->put('user', [
                         'id' => $user->id,
                         'name' => $user->name,
+                        'type'=>$user->type,
                         // Add other details as needed
                     ]);
-                    return view('admin')->with(['userName'=> $user->name ,'id'=>$user->id]);
+                    return view('admindash')->with(['userName'=> $user->name ,'id'=>$user->id,'type'=>$user->type]);
                 default:
                     return "Unknown User Type";
             }

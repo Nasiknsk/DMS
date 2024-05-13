@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Models\Categorie;
 
@@ -37,8 +38,11 @@ class CategoryController extends Controller
         $cat = new Categorie;
         $cat = Categorie::all(); // Fetch all users from the database
 
+        $con = new Contact;
+        $con=Contact::all();
+
         // Pass data to the view
-        return view('task', ['categorie' => $cat]);
+        return view('task', ['categorie' => $cat,'contact'=>$con]);
     }
     public function deleteCat($id)
     {

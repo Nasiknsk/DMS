@@ -81,9 +81,9 @@
 
 
                             <td>
-                                <a href="#"><i class="fas fa-edit"></i></a>
-                                {{-- <a href="{{ route('viewfull', ['id' => $user->id]) }}"><i class="fas fa-eye"></i></a> --}}
-                                <a href="#"
+                                <a href="{{ route('editContact', ['id' => $con->id]) }}"><i class="fas fa-edit"></i></a>
+                                {{-- <a href="{{ route('editContact', ['id' => $con->id]) }}"><i class="fas fa-eye"></i></a> --}}
+                                <a href="{{ route('deleteContact', ['id' => $con->id]) }}"
                                     onclick="confirm('Do you sure want to delete?')"><i class="fas fa-trash"
                                         style="color: red;"></i>
                                 </a>
@@ -95,9 +95,10 @@
                 </tbody>
             </table>
         </div>
+
     </div>
     <!-- Your page content goes here -->
-    <div style="margin-left: 50px; margin-right: 50px; margin-top: 10px;">
+    <div style="margin-left: 50px; margin-right: 50px; margin-top: 10px; ">
         <div class="row">
             <div class="col-md-12"> <!-- Remove col-md-8 class -->
                 <div class="panel panel-default">
@@ -116,12 +117,12 @@
                                         <div class="col-md-6">
                                             <label for="department">Office Name</label>
                                             <input type="text" class="form-control" name="office" id="department"
-                                                placeholder="Office Name" value="{{ old('department') }}">
+                                                 value="{{ old('department') }}">
                                         </div>
                                         <div class="col-md-6">
                                             <label for="section">Address</label>
                                             <input type="text" class="form-control" name="address" id="section"
-                                                placeholder="Address" value="{{ old('section') }}">
+                                     value="{{ old('section') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -130,12 +131,12 @@
                                         <div class="col-md-6">
                                             <label for="department">Department</label>
                                             <input type="text" class="form-control" name="department" id="department"
-                                                placeholder="Department" value="{{ old('department') }}">
+                                                 value="{{ old('department') }}">
                                         </div>
                                         <div class="col-md-6">
                                             <label for="section">Section</label>
                                             <input type="text" class="form-control" name="section" id="section"
-                                                placeholder="Section" value="{{ old('section') }}">
+                                     value="{{ old('section') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -144,12 +145,12 @@
                                         <div class="col-md-6">
                                             <label for="office-mail">Office Mail</label>
                                             <input type="email" class="form-control" name="omail" id="office-mail"
-                                                placeholder="Office Mail" value="{{ old('office-mail') }}">
+                                                 value="{{ old('office-mail') }}">
                                         </div>
                                         <div class="col-md-6">
                                             <label for="office-phone">Office Phone</label>
                                             <input type="tel" class="form-control" name="ophone" id="office-phone"
-                                                placeholder="Office Phone" value="{{ old('office-phone') }}">
+                                                 value="{{ old('office-phone') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -158,12 +159,12 @@
                                         <div class="col-md-6">
                                             <label for="contact-person">Contact Person Name</label>
                                             <input type="text" class="form-control" name="person" id="contact-person"
-                                                placeholder="Contact Person Name" value="{{ old('contact-person') }}">
+                                                 value="{{ old('contact-person') }}">
                                         </div>
                                         <div class="col-md-6">
                                             <label for="contact-email">Contact Email</label>
                                             <input type="email" class="form-control" name="email" id="contact-email"
-                                                placeholder="Contact Email" value="{{ old('contact-email') }}">
+                                                value="{{ old('contact-email') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -172,12 +173,12 @@
                                         <div class="col-md-6">
                                             <label for="contact-phone">Contact Phone</label>
                                             <input type="tel" class="form-control" name="phone1" id="contact-phone"
-                                                placeholder="Contact Phone" value="{{ old('contact-phone') }}">
+                                                 value="{{ old('contact-phone') }}">
                                         </div>
                                         <div class="col-md-6">
                                             <label for="contact-phone2">Contact phone2</label>
                                             <input type="tel" class="form-control" name="phone2" id="contact-phone2"
-                                                placeholder="Contact phone2" value="{{ old('contact-phone2') }}">
+                                                 value="{{ old('contact-phone2') }}">
                                         </div>
                                     </div>
                                 </div>

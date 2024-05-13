@@ -7,18 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>DMS Admin</title>
+    @if (session('user.type') == 2)
+        <title>DMS Admin</title>
+    @elseif(session('user.type') == 1)
+        <title>DMS Supervisor</title>
+    @endif
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="#">DMS-Admin</a>
+        @if (session('user.type') == 2)
+            <a class="navbar-brand ps-3" href="#">DMS-Admin</a>
+        @elseif(session('user.type') == 1)
+            <a class="navbar-brand ps-3" href="#">DMS-Supervisor</a>
+        @endif
+
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
@@ -53,53 +62,28 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('admindash')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
-                        {{-- <div class="sb-sidenav-menu-heading">Users</div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                            Users
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                            data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('addnew') }}">Add Users</a>
-                                <a class="nav-link" href="{{ route('viewuser') }}">View Users</a>
-                            </nav>
-                        </div> --}}
                         <div class="sb-sidenav-menu-heading">Users</div>
-                        <a class="nav-link" href="{{ route('viewuser') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i>
-                            </div>
-                            Users
-                        </a>
-                        <a class="nav-link" href="{{ route('contacts') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-address-book"></i>
-                            </div>
-                            Contacts
-                        </a>
-
-
-                        {{-- <div class="sb-sidenav-menu-heading">Categories</div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fa fa-th-list" aria-hidden="true"></i></div>
-                            Categories
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                            data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('addcat') }}">Add Category</a>
-                                <a class="nav-link" href="#">View Category</a>
-                            </nav>
-                        </div> --}}
-
-
+                        {{-- @if (auth()->check()) --}}
+                        @if (session('user.type') == 2)
+                            <a class="nav-link" href="{{ route('viewuser') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Users
+                            </a>
+                            <a class="nav-link" href="{{ route('contacts') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-address-book"></i></div>
+                                Contacts
+                            </a>
+                            {{-- <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                Daily Attendance
+                            </a> --}}
+                        @endif
+                        {{-- @endif --}}
+                        {{-- Other navigation links --}}
                         <div class="sb-sidenav-menu-heading">Quick Access</div>
 
                         <a class="nav-link" href="{{ route('addcat') }}">
@@ -111,9 +95,23 @@
                             </div>Tasks
 
                         </a>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ route('ticket') }}">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-ticket"></i></i>
+                            </div>Tickets
+
+                        </a>
+                        <a class="nav-link" href="ticketsubmission">
+                            <div class="sb-nav-link-icon"><i class="fas fa-check"></i>
+                            </div>SubmittedTickets
+
+                        </a>
+                        <a class="nav-link" href="{{ route('dailyupdates',['id' => session('user.id')])}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tables
+                            Daily Updates
+                        </a>
+                        <a class="nav-link" href="{{ route('dailyworks')}}">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-person-chalkboard"></i></div>
+                            Daily Works
                         </a>
                     </div>
                 </div>
@@ -127,7 +125,6 @@
         <div id="layoutSidenav_content">
             <main>
                 @yield('main')
-
             </main>
             <!-- # -->
         </div>

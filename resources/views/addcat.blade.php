@@ -17,7 +17,7 @@
     </div>
 @endif
 
-@extends('admin')
+@extends(session('user.type') == 1 ? 'supervisor' : 'admin')
 
 @section('sub')
     @if (session('user'))
