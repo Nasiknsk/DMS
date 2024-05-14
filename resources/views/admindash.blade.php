@@ -26,77 +26,83 @@
 @endsection
 
 @section('main')
-<main role="main" style="margin-top: 20px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4 bg-primary">
-                    <div class="card-header text-white">
-                        <a href="#" class="text-white">Card 1</a>
-                    </div>
-                    <div class="card-body">
-                        Content for Card 1
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 bg-success">
-                    <div class="card-header text-white">
-                        <a href="#" class="text-white">Card 2</a>
-                    </div>
-                    <div class="card-body">
-                        Content for Card 2
+    <main role="main" style="margin-top: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 bg-primary">
+                        <div class="card-header text-white">
+                            <a href="#" class="text-white">Daily Works</a>
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fas fa-calendar-alt fa-3x text-white"></i>
+                            <div>Daily Works</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 bg-warning">
-                    <div class="card-header text-white">
-                        <a href="#" class="text-white">Card 3</a>
-                    </div>
-                    <div class="card-body">
-                        Content for Card 3
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 bg-danger">
-                    <div class="card-header text-white">
-                        <a href="#" class="text-white">Card 4</a>
-                    </div>
-                    <div class="card-body">
-                        Content for Card 4
+                <div class="col-md-4">
+                    <div class="card mb-4 bg-success">
+                        <div class="card-header text-white">
+                            <a href="#" class="text-white">Clients</a>
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fas fa-users fa-3x text-white"></i>
+                            <div>Clients</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 bg-info">
-                    <div class="card-header text-white">
-                        <a href="#" class="text-white">Card 5</a>
-                    </div>
-                    <div class="card-body">
-                        Content for Card 5
+                <div class="col-md-4">
+                    <div class="card mb-4 bg-warning">
+                        <div class="card-header text-white">
+                            <a href="#" class="text-white">Staffs</a>
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fas fa-user-tie fa-3x text-white"></i>
+                            <div>Staffs</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 bg-secondary">
-                    <div class="card-header text-white">
-                        <a href="#" class="text-white">Card 6</a>
+                <div class="col-md-4">
+                    <div class="card mb-4 bg-danger">
+                        <div class="card-header text-white">
+                            <a href="#" class="text-white">Tasks</a>
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fas fa-tasks fa-3x text-white"></i>
+                            <div>Content for Card 4</div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        Content for Card 6
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 bg-info">
+                        <div class="card-header text-white">
+                            <a href="#" class="text-white">Tickets</a>
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fas fa-ticket-alt fa-3x text-white"></i>
+                            <div>Content for Card 5</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 bg-secondary">
+                        <div class="card-header text-white">
+                            <a href="#" class="text-white">Categories</a>
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fas fa-list fa-3x text-white"></i>
+                            <div>Content for Card 6</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
-
-
+    </main>
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 @endsection
